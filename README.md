@@ -1,1 +1,49 @@
-# docker-flutter
+# Docker Flutter
+
+![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/flutter.svg)
+[![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
+
+A Flutter docker image by the [Appwrite team](https://github.com/appwrite).
+
+## Getting Started
+
+These instructions will cover usage information to help your run Flutter docker image 
+
+### Prerequisities
+
+In order to run this image you'll need docker installed.
+
+* [Windows](https://docs.docker.com/windows/started)
+* [OS X](https://docs.docker.com/mac/started/)
+* [Linux](https://docs.docker.com/linux/started/)
+
+### Usage
+
+```shell
+docker run appwrite/clamav
+```
+
+#### Environment Variables
+
+This image has no environment variables. 
+
+#### Volumes
+
+You can mount any volume you need to allow the image to scan its files. 
+
+## Find Us
+
+* [GitHub](https://github.com/appwrite)
+* [Discord](https://discord.gg/GSeTUeA)
+* [Twitter](https://twitter.com/appwrite_io)
+
+## Authors
+
+**Eldad Fux**
+
++ [https://twitter.com/eldadfux](https://twitter.com/eldadfux)
++ [https://github.com/eldadfux](https://github.com/eldadfux)
+
+## Copyright and license
+
+The MIT License (MIT) [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
