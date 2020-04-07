@@ -1,7 +1,7 @@
 # Docker Flutter
 
-![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/flutter.svg)
-[![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
+[![Discord](https://badgen.net/badge/discord/chat/green)](https://discord.gg/GSeTUeA)
+[![Docker Pulls](https://badgen.net/docker/pulls/appwrite/flutter)](https://travis-ci.org/appwrite/flutter)
 
 A Flutter docker image by the [Appwrite team](https://github.com/appwrite).
 
@@ -20,7 +20,7 @@ In order to run this image you'll need docker installed.
 ### Usage
 
 ```shell
-docker run appwrite/clamav
+docker run appwrite/flutter
 ```
 
 #### Environment Variables
