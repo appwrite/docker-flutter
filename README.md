@@ -1,4 +1,4 @@
-# Docker Flutter
+# Discord Flutter
 
 [![Discord](https://badgen.net/badge/discord/chat/green)](https://discord.gg/GSeTUeA)
 [![Docker Pulls](https://badgen.net/docker/pulls/appwrite/flutter)](https://travis-ci.org/appwrite/flutter)
