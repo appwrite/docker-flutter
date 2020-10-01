@@ -1,4 +1,4 @@
-# Docker Flutter
+# Docker Flutter -An amazing project
 
 [![Discord](https://badgen.net/badge/discord/chat/green)](https://discord.gg/GSeTUeA)
 [![Docker Pulls](https://badgen.net/docker/pulls/appwrite/flutter)](https://travis-ci.org/appwrite/flutter)
@@ -47,3 +47,4 @@ You can mount any volume you need to allow the image to scan its files.
 ## Copyright and license
 
 The MIT License (MIT) [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
+ 
