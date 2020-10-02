@@ -3,21 +3,21 @@
 [![Discord](https://badgen.net/badge/discord/chat/green)](https://discord.gg/GSeTUeA)
 [![Docker Pulls](https://badgen.net/docker/pulls/appwrite/flutter)](https://travis-ci.org/appwrite/flutter)
 
-A Flutter docker image by the [Appwrite team](https://github.com/appwrite).
+A Flutter Docker Image by the [Appwrite team](https://github.com/appwrite).
 
 ## Getting Started
 
-These instructions will cover usage information to help your run Flutter docker image 
+These Instructions will Cover usage Information to help your run Flutter Docker Image 
 
 ### Prerequisities
 
-In order to run this image you'll need docker installed.
+In order to run this image you'll need instal Docker
 
 * [Windows](https://docs.docker.com/windows/started)
 * [OS X](https://docs.docker.com/mac/started/)
 * [Linux](https://docs.docker.com/linux/started/)
 
-### Usage
+### Usages 
 
 ```shell
 docker run appwrite/flutter
@@ -25,11 +25,11 @@ docker run appwrite/flutter
 
 #### Environment Variables
 
-This image has no environment variables. 
+This image has no environmental variables. 
 
 #### Volumes
 
-You can mount any volume you need to allow the image to scan its files. 
+You can mount any volume that you need to allow the image to scan it's files. 
 
 ## Find Us
 
