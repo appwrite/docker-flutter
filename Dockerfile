@@ -1,25 +1,47 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
-ENV ANDROID_HOME="/opt/android-sdk" \
-    PATH="/opt/android-sdk/tools/bin:/opt/flutter/bin:/opt/flutter/bin/cache/dart-sdk/bin:$PATH"
+LABEL maintainer="team@appwrite.io"
 
-RUN apt-get update > /dev/null \
-    && apt-get -y install --no-install-recommends curl git lib32stdc++6 openjdk-8-jdk-headless unzip > /dev/null \
-    && apt-get --purge autoremove > /dev/null \
-    && apt-get autoclean > /dev/null \
-    && rm -rf /var/lib/apt/lists/*
+ENV ANDROID_COMMAND_LINE_TOOLS_URL="https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip"
+ENV ANDROID_HOME="~/.android"
+ENV ANDROID_SDK_HOME="/opt/android-sdk"
+ENV ANDROID_VERSION="29"
+ENV ANDROID_BUILD_TOOLS_VERSION="29.0.3"
+ENV ANDROID_ARCHITECTURE="x86_64"
 
-RUN git clone -b master https://github.com/flutter/flutter.git /opt/flutter
+ENV FLUTTER_REPO_URL="https://github.com/flutter/flutter.git"
+ENV FLUTTER_HOME="/opt/flutter"
+ENV PATH="$ANDROID_HOME/tools/bin:$FLUTTER_HOME/bin:$FLUTTER_HOME/bin/cache/dart-sdk/bin:$PATH"
 
-RUN curl -s -O https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip \
-    && mkdir /opt/android-sdk \
-    && unzip sdk-tools-linux-4333796.zip -d /opt/android-sdk > /dev/null \
-    && rm sdk-tools-linux-4333796.zip
+# install dependencies
+ENV DEBIAN_FRONTEND noninteractive
+RUN \
+    apt-get update \
+    && apt-get -y install --no-install-recommends \
+        curl \
+        git \
+        lib32stdc++6 \
+        openjdk-8-jdk-headless \
+        unzip \
+    && apt-get --purge autoremove \
+    && rm -rf /var/lib/{apt,dpkg,cache,log}
 
-RUN mkdir ~/.android \
-    && echo 'count=0' > ~/.android/repositories.cfg \
-    && yes | sdkmanager --licenses > /dev/null \
-    && sdkmanager "tools" "build-tools;29.0.0" "platforms;android-29" "platform-tools" > /dev/null \
-    && yes | sdkmanager --licenses > /dev/null \
+# flutter
+RUN git clone -b master $FLUTTER_REPO_URL $FLUTTER_HOME
+
+# android sdk
+RUN curl -s $ANDROID_COMMAND_LINE_TOOLS_URL -o commandlinetools.zip \
+    && mkdir $ANDROID_SDK_HOME \
+    && unzip commandlinetools.zip -d $ANDROID_SDK_HOME \
+    && rm commandlinetools.zip
+
+RUN mkdir $ANDROID_HOME \
+    && echo 'count=0' > $ANDROID_HOME/repositories.cfg \
+    && yes "y" | sdkmanager --licenses > /dev/null \
+    && yes "y" | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS_VERSION" \
+    && yes "y" | sdkmanager "platforms;android-$ANDROID_VERSION" \
+    && yes "y" | sdkmanager "platform-tools" \
+    && yes "y" | sdkmanager "emulator" \
+    && yes "y" | sdkmanager "system-images;android-$ANDROID_VERSION;google_apis_playstore;$ANDROID_ARCHITECTURE" \
     && flutter doctor -v \
     && chown -R root:root /opt
