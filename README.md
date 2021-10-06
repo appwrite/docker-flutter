@@ -13,8 +13,8 @@ These instructions will cover usage information to help your run Flutter docker 
 
 In order to run this image you'll need docker installed.
 
-* [Mac OS](https://docs.docker.com/desktop/mac/install/)
 * [Linux](https://docs.docker.com/engine/install/#server)
+* [Mac OS](https://docs.docker.com/desktop/mac/install/)
 * [Windows](https://docs.docker.com/desktop/windows/install/)
 
 ### Usage
