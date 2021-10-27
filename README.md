@@ -46,4 +46,4 @@ You can mount any volume you need to allow the image to scan its files.
 
 ## Copyright and license
 
-License under the [MIT](LICENSE) license.
+The MIT License (MIT) [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
